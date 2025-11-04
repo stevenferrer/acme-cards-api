@@ -1,0 +1,24 @@
+{
+  "cardType": "Virtual",
+  "customerType": "Consumer",
+  "preferredCardName": "Hua Liang",
+  "spendLimit": 5000,
+  "kyc": {
+    "firstName": "Hua",
+    "lastName": "Liang",
+    "dob": "1990-08-08",
+    "residentialAddress": {
+      "line1": "Tung Ning Bldg",
+      "line2": "Western District",
+      "city": "Hong Kong",
+      "country": "HKG"
+    },
+    "idDocumentType": "Passport",
+    "idDocumentNumber": "1000000"
+  },
+  "meta": {
+    "id": "1000000",
+    "email": "hualiang@myspace.xyz",
+    "otpPhoneNumber": { "dialCode": 852, "phoneNumber": "25441194" }
+  }
+}

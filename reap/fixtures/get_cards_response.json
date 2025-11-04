@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "22e6338b-9e45-4b34-85db-4035a38fa46f",
+      "cardName": "Chin Zeng",
+      "secondaryCardName": "",
+      "last4": "2112",
+      "cardType": "virtual",
+      "availableCredit": "5000.00",
+      "status": "ACTIVE",
+      "physicalCardStatus": "NOT_PHYSICAL_CARD",
+      "shippingAddress": null,
+      "spendControl": {
+        "spendControlAmount": {
+          "dailySpent": "0.00",
+          "weeklySpent": "0.00",
+          "monthlySpent": "0.00",
+          "yearlySpent": "0.00",
+          "allTimeSpent": "0.00"
+        },
+        "spendControlCap": {
+          "transactionLimit": "0.00",
+          "dailyLimit": "0.00",
+          "weeklyLimit": "0.00",
+          "monthlyLimit": "0.00",
+          "yearlyLimit": "0.00",
+          "allTimeLimit": "0.00"
+        },
+        "atmControl": {
+          "dailyFrequency": "0.00",
+          "monthlyFrequency": "0.00",
+          "dailyWithdrawal": "0.00",
+          "monthlyWithdrawal": "0.00"
+        }
+      },
+      "cardDesign": "a8fb9fb3-2a0e-468c-b98e-f47955db20c7",
+      "threeDSForwarding": false,
+      "shippingInformation": {
+        "bulkShippingID": null,
+        "sku": null
+      },
+      "bulkShippingID": null,
+      "meta": {
+        "id": "3000000",
+        "email": "chinzeng@myspace.xyz",
+        "otpPhoneNumber": {
+          "dialCode": 852,
+          "phoneNumber": "31070474"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "totalItems": 1,
+    "itemCount": 1,
+    "itemsPerPage": 10,
+    "totalPages": 1,
+    "currentPage": 1
+  }
+}

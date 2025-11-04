@@ -1,0 +1,6 @@
+{
+  "code": "0315001",
+  "message": "We currently cannot issue cards for residents of this country",
+  "statusCode": 400,
+  "parameter": ""
+}
