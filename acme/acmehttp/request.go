@@ -1,4 +1,4 @@
-package cardhttp
+package acmehttp
 
 type createCardRequest struct {
 	FirstName  string         `json:"firstName"`

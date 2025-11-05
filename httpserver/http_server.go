@@ -11,7 +11,7 @@ import (
 	sloghttp "github.com/samber/slog-http"
 
 	"github.com/stevenferrer/acme-cards-api/acme"
-	"github.com/stevenferrer/acme-cards-api/acme/cardhttp"
+	"github.com/stevenferrer/acme-cards-api/acme/acmehttp"
 	"github.com/stevenferrer/acme-cards-api/acme/postgres"
 	"github.com/stevenferrer/acme-cards-api/reap"
 )
@@ -29,7 +29,7 @@ func New(cfg Config) *http.Server {
 		logger = slog.Default()
 	}
 
-	var cardHTTPHandler, accountHTTPHandler http.Handler
+	var acmehttpHandler, accountHTTPHandler http.Handler
 	{
 		cardRepo := postgres.NewCardRepository(cfg.DB)
 
@@ -39,8 +39,8 @@ func New(cfg Config) *http.Server {
 		})
 
 		cardSvc := acme.NewReapCardService(reapClient, cardRepo)
-		cardHTTPHandler = cardhttp.NewHTTPHandler(cardSvc)
-		accountHTTPHandler = cardhttp.NewAccountHTTPHandler(cardSvc)
+		acmehttpHandler = acmehttp.NewHTTPHandler(cardSvc)
+		accountHTTPHandler = acmehttp.NewAccountHTTPHandler(cardSvc)
 	}
 
 	mux := chi.NewMux()
@@ -51,7 +51,7 @@ func New(cfg Config) *http.Server {
 	)
 
 	mux.Mount("/account", accountHTTPHandler)
-	mux.Mount("/cards", cardHTTPHandler)
+	mux.Mount("/cards", acmehttpHandler)
 
 	return &http.Server{
 		Addr:           ":9000",

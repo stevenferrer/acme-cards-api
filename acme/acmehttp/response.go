@@ -1,4 +1,4 @@
-package cardhttp
+package acmehttp
 
 type card struct {
 	ID              string         `json:"id"`
