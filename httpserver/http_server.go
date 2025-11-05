@@ -29,7 +29,7 @@ func New(cfg Config) *http.Server {
 		logger = slog.Default()
 	}
 
-	var acmehttpHandler, accountHTTPHandler http.Handler
+	var cardHTTPHandler, accountHTTPHandler http.Handler
 	{
 		cardRepo := postgres.NewCardRepository(cfg.DB)
 
@@ -39,7 +39,7 @@ func New(cfg Config) *http.Server {
 		})
 
 		cardSvc := acme.NewReapCardService(reapClient, cardRepo)
-		acmehttpHandler = acmehttp.NewHTTPHandler(cardSvc)
+		cardHTTPHandler = acmehttp.NewHTTPHandler(cardSvc)
 		accountHTTPHandler = acmehttp.NewAccountHTTPHandler(cardSvc)
 	}
 
@@ -51,7 +51,7 @@ func New(cfg Config) *http.Server {
 	)
 
 	mux.Mount("/account", accountHTTPHandler)
-	mux.Mount("/cards", acmehttpHandler)
+	mux.Mount("/cards", cardHTTPHandler)
 
 	return &http.Server{
 		Addr:           ":9000",
